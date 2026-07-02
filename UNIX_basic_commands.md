@@ -2,7 +2,6 @@
 
 **Author:** Viraj Rajendra Muthye  
 **Email:** viraj.muthye@gmail.com
-**Date:** `r Sys.Date()`  
 
 ---
 
@@ -845,13 +844,6 @@ Remember:
 - Use `man command_name` to get detailed help for any command
 - Practice in a safe environment before working with important data
 - Don't hesitate to ask for help in online communities
-
-### Session Information
-
-```{r session-info, echo=FALSE}
-# This section would typically show R session info
-# For a Linux tutorial, we'll show system information instead
-```
 
 For questions, suggestions, or contributions, please contact:
 **Viraj Rajendra Muthye** - viraj.muthye@gmail.com

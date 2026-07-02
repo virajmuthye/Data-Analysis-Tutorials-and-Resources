@@ -1,5 +1,10 @@
 # tmux Tutorial
 
+**Author:** Viraj Rajendra Muthye  
+**Email:** viraj.muthye@gmail.com
+
+---
+
 ## What is tmux?
 
 tmux is a **terminal multiplexer** — it lets you run multiple terminal sessions inside a single window, keep sessions alive after you disconnect (crucial for long-running jobs on HPC/servers), and organize work into named sessions and windows.
@@ -191,3 +196,20 @@ tmux a -t runmonitor
 - You can have multiple sessions per server (e.g., one per project).
 - Add `set -g mouse on` to `~/.tmux.conf` to enable mouse scrolling and pane clicking.
 - `Ctrl+b z` (zoom) is underrated — instantly fullscreens a pane, toggle it back the same way.
+
+---
+
+## Resources
+
+- [tmux GitHub Wiki](https://github.com/tmux/tmux/wiki)
+- [tmux Cheat Sheet](https://tmuxcheatsheet.com/)
+- ["A tmux Crash Course" (Thoughtbot)](https://thoughtbot.com/blog/a-tmux-crash-course)
+
+---
+
+For questions, suggestions, or contributions, please contact:
+**Viraj Rajendra Muthye** - viraj.muthye@gmail.com
+
+---
+
+*Happy multiplexing!*

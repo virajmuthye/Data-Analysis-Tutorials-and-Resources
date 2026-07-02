@@ -1,7 +1,7 @@
 # Complete Guide to ggplot2 for Data Visualization in R
 
-**Author:** Viraj Muthye  
-**Date:** `r Sys.Date()`  
+**Author:** Viraj Rajendra Muthye  
+**Email:** viraj.muthye@gmail.com
 
 ## Table of Contents
 
@@ -53,6 +53,8 @@ library(patchwork)
 # Set a default theme for all plots
 theme_set(theme_minimal())
 ```
+
+> **Note:** As of ggplot2 3.4.0, the `size` aesthetic for line widths (in `geom_line()`, `geom_smooth()`, `element_rect()`, etc.) was renamed to `linewidth`. `size` is still used for point size in `geom_point()`. The examples below use the current syntax.
 
 ## Grammar of Graphics
 
@@ -115,7 +117,7 @@ time_data <- data.frame(
 p2 <- time_data %>%
   pivot_longer(cols = c(sales, profit), names_to = "metric", values_to = "value") %>%
   ggplot(aes(x = year, y = value, color = metric)) +
-  geom_line(size = 1.2) +
+  geom_line(linewidth = 1.2) +
   geom_point(size = 3) +
   scale_color_manual(values = c("sales" = "#2E86AB", "profit" = "#A23B72")) +
   labs(title = "Company Performance Over Time",
@@ -245,11 +247,11 @@ print(p9)
 custom_theme <- theme_minimal() +
   theme(
     plot.title = element_text(size = 16, face = "bold", hjust = 0.5),
-    plot.subtitle = element_text(size = 12, hjust = 0.5, style = "italic"),
+    plot.subtitle = element_text(size = 12, hjust = 0.5, face = "italic"),
     axis.title = element_text(size = 12, face = "bold"),
     legend.position = "bottom",
     panel.grid.minor = element_blank(),
-    panel.border = element_rect(color = "grey80", fill = NA, size = 0.5)
+    panel.border = element_rect(color = "grey80", fill = NA, linewidth = 0.5)
   )
 
 p10 <- ggplot(mtcars, aes(x = wt, y = mpg, color = factor(cyl))) +
@@ -275,7 +277,7 @@ print(p10)
 # Confidence intervals and regression
 p11 <- ggplot(mtcars, aes(x = hp, y = mpg)) +
   geom_point(aes(color = factor(cyl)), size = 3, alpha = 0.7) +
-  geom_smooth(method = "lm", se = TRUE, color = "darkred", size = 1.2) +
+  geom_smooth(method = "lm", se = TRUE, color = "darkred", linewidth = 1.2) +
   geom_smooth(method = "loess", se = FALSE, color = "blue", linetype = "dashed") +
   scale_color_brewer(palette = "Dark2") +
   labs(title = "Horsepower vs MPG with Trend Lines",
@@ -331,7 +333,7 @@ sales_data <- data.frame(
 # Multi-panel sales dashboard
 p13 <- sales_data %>%
   ggplot(aes(x = date, y = sales, color = region)) +
-  geom_line(size = 1.2) +
+  geom_line(linewidth = 1.2) +
   geom_point(size = 2) +
   facet_wrap(~region, ncol = 2) +
   scale_x_date(date_labels = "%Y", date_breaks = "1 year") +
@@ -403,7 +405,7 @@ price_data <- data.frame(
 # Stock price comparison
 p15 <- price_data %>%
   ggplot(aes(x = date, y = price, color = stock)) +
-  geom_line(size = 0.8, alpha = 0.8) +
+  geom_line(linewidth = 0.8, alpha = 0.8) +
   scale_x_date(date_labels = "%b", date_breaks = "2 months") +
   scale_y_continuous(labels = scales::dollar) +
   scale_color_manual(values = c("stock_a" = "#E74C3C", "stock_b" = "#3498DB", "stock_c" = "#2ECC71")) +
@@ -566,7 +568,9 @@ sessionInfo()
 
 This tutorial provides a comprehensive foundation for using ggplot2 in your data analysis projects. Practice with different datasets and experiment with various combinations of geoms, aesthetics, and themes to develop your visualization skills.
 
-For questions or contributions, please email me at viraj.muthye@gmail.com! 
+For questions, suggestions, or contributions, please contact:
+**Viraj Rajendra Muthye** - viraj.muthye@gmail.com
 
+---
 
-**Happy plotting! 📊**
+*Happy plotting! 📊*
